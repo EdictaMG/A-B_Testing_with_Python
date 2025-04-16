@@ -1,34 +1,46 @@
 # A/B Testing with Python
 
-In this repository I share my process of performing an A/B test using Python.  For this project, I aimed to answer the question: **Which version of a button in a store website homepage has a higher click-through rate (CTR)?**
+This repository walks through the process of running an A/B test using Python to answer a simple but important question:
 
-The relevant business implication of a website version button having a higher CTR is its improved effectiveness at capturing user attention and prompting them to take the desired action compared to the original version.
+**Which version of a homepage button leads to the highest click-through rate (CTR)?**
+
+Understanding which button design drives more clicks can directly impact sales by encouraging more users to take action—in this case, to purchase the iPhone 13.
 
 ## Situation
-For this project I return to working with Eniac, a fictitious company in Europe that sells tech products and accessories (previous repositories in which this company is featured are *“Data_Exploration_with_SQL_and_Tableau”* and *“Data_Analysis_with_Python."*)  Eniac is interested in improving the rate of sales made of its iPhone 13 through the clicking of a button that appears in its homepage. 
+This project revisits **Eniac**, a fictional European company that sells tech gadgets and accessories (also featured in my repositories *Data_Exploration_with_SQL_and_Tableau* and *Data_Analysis_with_Python*). Eniac wanted to optimize the design of a button promoting iPhone 13 sales on their homepage by testing four variations.
+
+The goal was to determine which version of the button (A, B, C, or D) leads to the most confirmed iPhone 13 purchases via clicks on that button. Version A served as the control (original design).
 
 ## Approach
-* I perform an A/B test applying chi-square testing on four button versions (A, B, C and D) where A is the original version (control).
-* I present a longer manual testing approach, as well as a quicker “coder’s” approach for comparison.
-* The statistical significance chosen is 95% with a minimum detectable effect set at 20%.
-* The primary metric chosen to compare the different versions is the conversion rate of the iPhone 13 “confirmed” purchases achieved through clicking a specific button (nominator) against the overall click-rate of the same button (denominator).
-* To determine the winning button version, I apply a quick approach, using a table of observations to calculate percentages of clicks to no-clicks.  The version with the highest percentage is deemed the winner.  I also apply a “Post-Hoc” test on the various version permutations to determine if any particular version performs significantly better than the rest.
+
+- A/B testing was performed using the **Chi-square test** to assess statistical significance.
+- I used two approaches:
+  - A detailed step-by-step method (great for learning or presentations).
+  - A streamlined “developer-style” version for quick analysis.
+- **Confidence level:** 95%
+- **Minimum detectable effect:** 20%
+- **Primary metric:**  
+  CTR, defined as  
+  `confirmed purchases (via button click) / total button clicks`
+
+To identify the best-performing version:
+- I calculated the click-to-no-click ratio for each version.
+- Then applied **Post-Hoc tests** on all version pairs to see which button significantly outperformed the others.
 
 ## Files
 
 ### Data
-- **eniac_a:** test version A data
-- **eniac_b:** test version B data
-- **eniac_c:** test version C data
-- **eniac_d:** test version D data
+- `eniac_a.csv` — Data for version A (control)
+- `eniac_b.csv` — Data for version B
+- `eniac_c.csv` — Data for version C
+- `eniac_d.csv` — Data for version D
 
 ### Scripts
-- **AB_testing_Eniac:** notebook going through the whole AB process, including quicker and longer approaches.
+- `AB_testing_Eniac.ipynb` — Notebook with the complete A/B testing workflow, including both manual and fast-track approaches.
 
 ## Using the files
-
-- Update urls in notebook with actual location of data files.
-- If data files have been stored in Google Drive, ensure links have ”editor” rights in order to be able to read them into the notebook.
+- 1. **Update file paths** in the notebook to point to the actual location of your data.
+2. If using **Google Drive**, make sure your file links have *“editor”* access so they can be loaded into the notebook.
 
 ## Languages and Libraries Used
 
@@ -41,5 +53,5 @@ For this project I return to working with Eniac, a fictitious company in Europe 
 
 ## Tools used
 
-- Google Colab for notebook
-- Google Drive
+- Google Colab for running the notebook
+- Google Drive for data storage
