@@ -35,7 +35,7 @@ To identify the best-performing version:
 - `eniac_c.csv` — Data for version C
 - `eniac_d.csv` — Data for version D
 
-### Scripts
+### Script
 - `AB_testing_Eniac.ipynb` — Notebook with the complete A/B testing workflow, including both manual and fast-track approaches.
 
 ## Using the files
